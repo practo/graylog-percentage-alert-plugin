@@ -1,4 +1,4 @@
-package co.omise.graylog.plugins.customalert;
+package com.practo.graylog.plugins.percentagealert;
 
 import java.net.URI;
 import java.util.Collections;
@@ -8,12 +8,12 @@ import org.graylog2.plugin.PluginMetaData;
 import org.graylog2.plugin.ServerStatus;
 import org.graylog2.plugin.Version;
 
-public class CustomAlertConditionMetaData implements PluginMetaData {
+public class PercentageAlertConditionMetaData implements PluginMetaData {
    private static final String PLUGIN_PROPERTIES = "com.praco.graylog.plugins.graylog-plugin-percentage-alert-condition/graylog-plugin.properties";
 
    @Override
    public String getUniqueId() {
-      return CustomAlertCondition.class.getName();
+      return PercentageAlertCondition.class.getName();
    }
 
    @Override

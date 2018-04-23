@@ -1,1 +1,1 @@
-co.omise.graylog.plugins.customalert.CustomAlertConditionPlugin
+com.practo.graylog.plugins.percentagealert.PercentageAlertConditionPlugin

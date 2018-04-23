@@ -1,4 +1,4 @@
-package co.omise.graylog.plugins.customalert;
+package com.practo.graylog.plugins.percentagealert;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,25 +35,25 @@ import org.slf4j.LoggerFactory;
 import com.google.inject.assistedinject.Assisted;
 import com.google.inject.assistedinject.AssistedInject;
 
-public class CustomAlertCondition extends AbstractAlertCondition {
+public class PercentageAlertCondition extends AbstractAlertCondition {
 
    private final Searches searches;
    private String query;
    private Period period;
    private int threshold;
-   private Logger logger = LoggerFactory.getLogger(CustomAlertCondition.class);
+   private Logger logger = LoggerFactory.getLogger(PercentageAlertCondition.class);
 
    public interface Factory extends AlertCondition.Factory {
       @Override
-      CustomAlertCondition create(Stream stream, @Assisted("id") String id, DateTime createdAt,
+      PercentageAlertCondition create(Stream stream, @Assisted("id") String id, DateTime createdAt,
             @Assisted("userid") String creatorUserId, Map<String, Object> parameters,
             @Assisted("title") @Nullable String title);
 
       @Override
-      CustomAlertCondition.Config config();
+      PercentageAlertCondition.Config config();
 
       @Override
-      CustomAlertCondition.Descriptor descriptor();
+      PercentageAlertCondition.Descriptor descriptor();
    }
 
    public static class Config implements AlertCondition.Config {
@@ -85,10 +85,10 @@ public class CustomAlertCondition extends AbstractAlertCondition {
    }
 
    @AssistedInject
-   public CustomAlertCondition(Searches searches, Configuration configuration, @Assisted Stream stream,
+   public PercentageAlertCondition(Searches searches, Configuration configuration, @Assisted Stream stream,
          @Nullable @Assisted("id") String id, @Assisted DateTime createdAt, @Assisted("userid") String creatorUserId,
          @Assisted Map<String, Object> parameters, @Assisted("title") @Nullable String title) {
-      super(stream, id, CustomAlertCondition.class.getName(), createdAt, creatorUserId, parameters, title);
+      super(stream, id, PercentageAlertCondition.class.getName(), createdAt, creatorUserId, parameters, title);
       this.searches = searches;
       try {
          this.query = (String) parameters.get("query");

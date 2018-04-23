@@ -1,4 +1,4 @@
-package co.omise.graylog.plugins.customalert;
+package com.practo.graylog.plugins.percentagealert;
 
 import java.util.Collections;
 import java.util.Set;
@@ -6,7 +6,7 @@ import java.util.Set;
 import org.graylog2.plugin.PluginConfigBean;
 import org.graylog2.plugin.PluginModule;
 
-public class CustomAlertConditionModule extends PluginModule {
+public class PercentageAlertConditionModule extends PluginModule {
 
    @Override
    public Set<? extends PluginConfigBean> getConfigBeans() {
@@ -15,8 +15,8 @@ public class CustomAlertConditionModule extends PluginModule {
 
    @Override
    protected void configure() {
-      addAlertCondition(CustomAlertCondition.class.getCanonicalName(), CustomAlertCondition.class,
-            CustomAlertCondition.Factory.class);
+      addAlertCondition(PercentageAlertCondition.class.getCanonicalName(), PercentageAlertCondition.class,
+            PercentageAlertCondition.Factory.class);
    }
 
 }

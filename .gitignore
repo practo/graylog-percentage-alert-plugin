@@ -4,6 +4,7 @@
 *.iws
 .classpath
 .project
+.DS_Store
 .settings/
 target/
 dependency-reduced-pom.xml
