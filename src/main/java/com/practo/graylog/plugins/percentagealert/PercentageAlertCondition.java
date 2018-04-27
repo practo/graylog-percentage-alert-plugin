@@ -155,8 +155,8 @@ public class PercentageAlertCondition extends AbstractAlertCondition {
          
             if (errorPercentage > threshold) {
                trigger = true;
-               stringBuffer.append("Found ").append(errorLog).append(" messages from `")
-                     .append(query).append("` which were exceeding the (").append(threshold).append("%)  threshold in last ")
+               stringBuffer.append("Found ").append(errorLog).append(" failure on `")
+                     .append(stream.getTitle()).append(" stream ` which were exceeding the (").append(threshold).append("%)  threshold in last ")
                      .append(PeriodFormat.getDefault().print(period));
             }
         
